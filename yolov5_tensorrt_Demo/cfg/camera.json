@@ -1,0 +1,72 @@
+{
+    "cameras" : [
+        {
+            "processID" : "0", 
+            "cameraID" : "0",
+            "cameraName" : "摄像机0",
+            "cameraRtsp" : "rtsp://172.16.61.230:8554/stream",
+            "cameraEncode" : "h264",
+            "cameraWidth" : 1920,
+            "cameraHeight" : 1080,
+            "defensive_zone_b" : [
+                [ 591, 443 ],
+                [ 815, 335 ],
+                [ 2543, 813 ],
+                [ 2553, 1275 ],
+                [ 1727, 1270 ],
+                [ 1731, 1430 ],
+                [ 1274, 1436 ],
+                [ 372, 537 ]
+            ],
+            "scene" : "道口1"
+        },
+
+        {
+            "processID" : "0", 
+            "cameraID" : "0",
+            "cameraName" : "摄像机0",
+            "cameraRtsp" : "rtsp://admin:hhkj1234@10.145.102.29:554/stream",
+            "cameraEncode" : "h264",
+            "cameraWidth" : 1920,
+            "cameraHeight" : 1080,
+            "defensive_zone_b"  : [
+                [ 17, 831 ],
+                [ 591, 594 ],
+                [ 1307, 698 ],
+                [ 1120, 1067 ]
+            ],
+            "defensive_zone_k"  : [
+                [ 17, 831 ],
+                [ 898, 383 ],
+                [ 1419, 480 ],
+                [ 1120, 1067 ]
+            ],
+            "scene" : "道口2",
+            "needAlarmType" : ["h", "o", "k", "b"],
+            "models" : "/home/hhkj/dmh/RZG/AnalysisServer/weights/20250616_dk01.engine"
+        },
+        
+        {
+            "processID" : "0", 
+            "cameraID" : "0",
+            "cameraName" : "摄像机0",
+            "cameraRtsp" : "rtsp://admin:hhkj1234@10.145.102.29:554/stream",
+            "cameraEncode" : "h264",
+            "cameraWidth" : 1920,
+            "cameraHeight" : 1080,
+            "detectzone0" : [
+                [ 591, 443 ],
+                [ 815, 335 ],
+                [ 2543, 813 ],
+                [ 2553, 1275 ],
+                [ 1727, 1270 ],
+                [ 1731, 1430 ],
+                [ 1274, 1436 ],
+                [ 372, 537 ]
+            ],
+            "scene" : "车辆溜逸",
+            "needAlarmType" : ["h", "o", "k", "b"],
+            "models" : "/home/hhkj/dmh/RZG/AnalysisServer/weights/20250616_dk01.engine"
+        }
+    ]
+}

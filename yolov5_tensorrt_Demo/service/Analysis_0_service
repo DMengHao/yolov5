@@ -1,0 +1,17 @@
+[Unit]
+Description="摄像头0分析服务"
+After=network.target # 表示该服务在网络服务启动之后在启动（需要拉RTSP流）
+
+[Service]
+#Type=forking
+User=root # 以root用户身份运行服务
+Group=root
+RestartSec=3s # 如果服务崩溃，重启前等待3秒
+Restart=always # 无论因什么原因退出，都会自动重启该服务，确保其持续运行
+
+Environment=LD_LIBRARY_PATH=/home/hhkj/third-part/TensorRT-8.6.1.6/lib:/usr/local/x264/lib:/usr/local/cuda-11.8/targets/x86_64-linux/lib # 设置环境变量， Tensorrt库，视频编码库，CUDA
+WorkingDirectory=/home/hhkj/RZG/AnalysisServer # 设置程序运行时的工作目录，相对路径的依赖都是从这里开始
+ExecStart=/root/anaconda3/envs/dev/bin/python /home/hhkj/RZG/AnalysisServer/analysisServer.py --camera=./configs/camera_0.json # 设置启动命令
+
+[Install] # 单元：服务开机自启行为
+WantedBy=multi-user.target

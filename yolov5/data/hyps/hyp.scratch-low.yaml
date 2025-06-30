@@ -1,0 +1,34 @@
+# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+# Hyperparameters for low-augmentation COCO training from scratch
+# python Task2_train.py --batch 64 --cfg yolov5n6.yaml --weights '' --data coco.yaml --img 640 --epochs 300 --linear
+# See tutorials for hyperparameter evolution https://github.com/ultralytics/yolov5#tutorials
+
+lr0: 0.01  # initial learning rate (SGD=1E-2, Adam=1E-3)
+lrf: 0.01  # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937  # SGD momentum/Adam beta1 动量 较小的动量可以使更新方向更加平稳，较大的动量可以加速参数更新更加平稳
+weight_decay: 0.0005  # optimizer weight decay 5e-4 权重衰减，正则化技术，减少模型的复杂性，防止过拟合。
+warmup_epochs: 3.0  # warmup epochs (fractions ok) 较小学习率进行预热，之后继续按照设定的学习率进行训练
+warmup_momentum: 0.8  # warmup initial momentum 预热前的动量设置
+warmup_bias_lr: 0.1  # warmup initial bias lr 预热偏执的学习率所使用的初始学习率
+box: 0.05  # box loss gain 控制bounding box loss的权重
+cls: 0.5  # cls loss gain cls值越大，表示越注重分类损失的影响
+cls_pw: 1.0  # cls BCELoss positive_weight 用于控制分类损失函数中正样本权重 默认为1，表示正样本权重和负样本权重相等 只设置的越大，正样本权重越大
+obj: 1.0  # obj loss gain (scale with pixels) 置信度损失权重
+obj_pw: 1.0  # obj BCELoss positive_weight 置信度损失的二元交叉熵损失中正样本的权重
+iou_t: 0.20  # IoU training threshold IOU阈值，当预测框与真实框之间的IOU大于iou_t时候，视为检测正确
+anchor_t: 4.0  # anchor-multiple threshold anchor的阈值，越大越容易匹配大目标，越小则更容易匹配小目标
+# anchors: 3  # anchors per output layer (0 to ignore)
+fl_gamma: 0.0  # focal loss gamma (efficientDet default gamma=1.5) 用于调整损失函数的加权，值越大，模型对难以分类样本的关注程度越高，对易于分类的样本关注程度越低
+hsv_h: 0.015  # image HSV-Hue augmentation (fraction)
+hsv_s: 0.7  # image HSV-Saturation augmentation (fraction)
+hsv_v: 0.4  # image HSV-Value augmentation (fraction)
+degrees: 0.0  # image rotation (+/- deg) 旋转
+translate: 0.1  # image translation (+/- fraction) 平移
+scale: 0.5  # image scale (+/- gain) 缩放
+shear: 0.0  # image shear (+/- deg)扭曲
+perspective: 0.0  # image perspective (+/- fraction), range 0-0.001 数据增强的一种 对图像进行透视变换，使得图像看起来是从不同的角度拍摄的
+flipud: 0.0  # image flip up-down (probability) 上下翻转的概率
+fliplr: 0.5  # image flip left-right (probability) 左右反翻转的概率
+mosaic: 1.0  # image mosaic (probability) 以一定的概率将四张图片拼接成一张，增强了模型对多物体的感知能力和位置估计能力
+mixup: 0.0  # image mixup (probability) 以一定的概率对两张图片进行线性混合，增强了模型对物体形状和纹理的学习能力
+copy_paste: 0.0  # segment copy-paste (probability) 以一定的概率将一张图片的一部分复制到另一张图片上，取值一般在0-0.5之间

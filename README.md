@@ -1,7 +1,7 @@
 # yolov5
 ## 1.配置yolov5所需环境：
 
-下载安装cuda12.1、cudnn8.9.7、TensorRT8.6.1参考链接：https://blog.csdn.net/qq_45754436/article/details/140323984?spm=1011.2415.3001.5331
+下载安装cuda12.1、cudnn8.9.7、TensorRT8.6.1参考链接：[cuda-cudnn-tensorRT](https://blog.csdn.net/qq_45754436/article/details/140323984?spm=1011.2415.3001.5331)
 
 创建虚拟环境机器配置需要的环境：
 
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 使用labelimg进行标注图片（注意先生成对应的xml文件，如果生成txt文件之后生成的标签是数字，而xml文件标签还是原始标签，便于查看）
 
-参考链接：https://blog.csdn.net/knighthood2001/article/details/125883343?fromshare=blogdetail&sharetype=blogdetail&sharerId=125883343&sharerefer=PC&sharesource=qq_45754436&sharefrom=from_link
+参考链接：[labelimg](https://blog.csdn.net/knighthood2001/article/details/125883343?fromshare=blogdetail&sharetype=blogdetail&sharerId=125883343&sharerefer=PC&sharesource=qq_45754436&sharefrom=from_link)
 
 xml生成txt脚本放于：./utils/xml_txt.py
 
